@@ -5,6 +5,7 @@ set ttimeoutlen=10
 set laststatus=2
 "let g:airline#extensions#tabline#enabled = 1
 set noshowmode
+""let g:airline_powerline_fonts = 1
 
 "ukrainian lang support
 set keymap=ukrainian-jcuken
@@ -90,3 +91,8 @@ let g:vdebug_options = {
 let g:vdebug_keymap = {
 \    "set_breakpoint" : "<F8>",
 \}
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
