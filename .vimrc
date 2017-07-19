@@ -96,3 +96,6 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
+
+" style cursorline
+hi CursorLine term=bold cterm=NONE guibg=Grey40 ctermbg=235
