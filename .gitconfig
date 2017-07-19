@@ -1,0 +1,21 @@
+[user]
+	email = third.pancake16@gmail.com
+	name = 3rdp
+[core]
+	autocrlf = false
+	safecrlf = true
+	editor = vim
+	excludesfile = /home/sasha/.gitignore-global
+[alias]
+	co = checkout
+	ci = commit
+	st = status -sb
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	exec = "!exec "
+	lg = log --pretty=format:'%h was %an, %ar, message: %s' --graph
+	au = add -u
+	dca = diff --cached
+	cia = commit --amend

@@ -126,7 +126,7 @@ alias alarm-at-7='sudo rtcwake -d rtc0 -m mem -t $(date +%s -d "today 07:13") -v
 alias alarm-at-11='sudo rtcwake -d rtc0 -m mem -t $(date +%s -d "today 11:00") -v && vlc /media/sasha/ADE2446516B3B8B8/музло/06/The\ Doors\ -\ Moonlight\ Drive\ \ \(Strange\ Days\ 1967\).mp3'
 
 # my diary bash script
-alias diary='/media/sasha/ADE2446516B3B8B8/diary/diary.sh'
+alias diary='/home/sasha/Документи/diary/diary.sh'
 
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
