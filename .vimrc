@@ -99,3 +99,6 @@ let g:airline_symbols.space = "\ua0"
 
 " style cursorline
 hi CursorLine term=bold cterm=NONE guibg=Grey40 ctermbg=235
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
