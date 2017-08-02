@@ -1,4 +1,4 @@
-sudo apt install vim-gtk-py2
+sudo apt install -y vim-gtk-py2 screen
 # install pathogen plugin manager
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 # install essential plugins
