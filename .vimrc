@@ -9,7 +9,7 @@ set noshowmode
 
 "ukrainian lang support
 set keymap=ukrainian-jcuken
-"set keymap=russian-jcukenwin
+""set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 
@@ -73,7 +73,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_localrmdir='rm -r' "so you can remove non-empty dirs
 
 "either ai + si, or cindent
-"set autoindent
+set autoindent
 "set smartindent
 set cindent
 
@@ -122,3 +122,14 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+""let g:codi#raw = 1
+
+" clear last search highlighting
+map <Space> :noh<CR>:<backspace>
+
+" fix webpack watch bug (and after all it just makes more sense)
+set backupcopy=yes
+
+" make :find in node projects bearable
+set wildignore+=**/node_modules/**
