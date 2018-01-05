@@ -118,3 +118,7 @@ codi() {
 
 alias -s js=vim
 alias -g diary=/home/sasha/Документи/diary/diary.sh
+alias st='git st'
+
+# enable 256 colors (only for screen really)
+export TERM=xterm-256color
