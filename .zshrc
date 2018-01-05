@@ -62,6 +62,7 @@ ZSH_THEME="amuse"
 plugins=(
   git,
   npm,
+  nvm,
   screen,
   web-search
 )
