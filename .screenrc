@@ -2,4 +2,3 @@ hardstatus on
 hardstatus alwayslastline
 hardstatus string "%w"
 mousetrack on
-term screen-256color
