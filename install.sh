@@ -1,13 +1,18 @@
 sudo apt-get update
-sudo apt install -y vim-gtk-py2 screen
-# install pathogen plugin manager
+sudo apt install -y vim-gtk-py2 screen git
+
+# set up pathogen the vim plugin manager
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-# install essential plugins
+
+# install essential vim plugins
+# WHERE is the airline and javascript -- the much more useful
 git clone https://github.com/joonty/vdebug ~/.vim/bundle/vdebug 
-git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes 
-# change apostrophe in vim's ukrainian-jcu file
+git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+
+# bearable ua apostrophe for vim
 sudo sed -i '/`/c\`       ’' $(locate ukrainian-jcuken)
 
+# clone and unpack the configs
 git clone https://github.com/3rdp/dotfiles ~/dotfiles
 cd
 mv dotfiles/* dotfiles/.* .
@@ -20,14 +25,18 @@ sudo apt install -y vlc audacity gimp gimp-data-extras caffeine bleachbit gdebi
 echo "Desktop setup now"
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update && sudo apt install tlp tlp-rdw smartmontools ethtool && sudo tlp start
+
 # so office updates regularly
 sudo add-apt-repository ppa:libreoffice/ppa
+
 # install tight icons
 sudo add-apt-repository ppa:ravefinity-project/ppa
 sudo apt-get update && sudo apt-get install vibrancy-colors 
+
 # cache fonts and icons
 for d in /usr/share/icons/*; do sudo gtk-update-icon-cache -f $d; done
 sudo fc-cache -fv
 mkdir ~/.compose-cache
+
 # delete lame apps
 sudo apt purge gigolo parole
