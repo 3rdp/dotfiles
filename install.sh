@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt install -y vim-gtk-py2 screen git
+sudo apt install -y vim-gtk-py2 screen git zsh
 
 # set up pathogen the vim plugin manager
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -11,6 +11,11 @@ git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-ai
 
 # bearable ua apostrophe for vim
 sudo sed -i '/`/c\`       ’' $(locate ukrainian-jcuken)
+
+chsh -s $(which zsh)
+# logout and log back in now
+# don't forget to accept creating .zshrc with recommended settings before installing oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # clone and unpack the configs
 git clone https://github.com/3rdp/dotfiles ~/dotfiles
