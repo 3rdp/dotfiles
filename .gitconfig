@@ -8,7 +8,7 @@
 	excludesfile = /home/sasha/.gitignore-global
 [alias]
 	co = checkout
-  cob = checkout -b
+	cob = checkout -b
 	ci = commit
 	st = status -sb
 	br = branch
@@ -16,7 +16,7 @@
 	type = cat-file -t
 	dump = cat-file -p
 	exec = "!exec "
-	lg = log --pretty=format:'%h was %an, %ar, message: %s' --graph
+	lg = log --pretty=format:'%h was %an, %ar | %C(bold)%s' --graph
 	au = add -u
 	dca = diff --cached
 	cia = commit --amend
