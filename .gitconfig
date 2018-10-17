@@ -8,7 +8,6 @@
 	excludesfile = /home/sasha/.gitignore-global
 [alias]
 	co = checkout
-	cob = checkout -b
 	ci = commit
 	st = status -sb
 	br = branch
