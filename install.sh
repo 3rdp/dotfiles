@@ -1,26 +1,37 @@
+cd ~/dotfiles
+# TODO: extract install cli utils to separate script file 
 sudo apt-get update
 sudo apt install -y vim-gtk-py2 screen git zsh
 
 # set up pathogen the vim plugin manager
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+# TODO: extract pathogen and clone (install?) vim plugins to separate script file(s)
 # install essential vim plugins
 # WHERE is the airline and javascript -- the much more useful
 git clone https://github.com/joonty/vdebug ~/.vim/bundle/vdebug 
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 
-# bearable ua apostrophe for vim
-sudo sed -i '/`/c\`       ’' $(locate ukrainian-jcuken)
+# DONE: this is vim setup, can append to install cli utils or create a separate file(s)
+bash scripts/vim-apostrophe.sh
+bash scripts/vim-diffstat.sh
 
+# TODO: this is zsh setup, append to install cli utils or create a separate file
 chsh -s $(which zsh)
 # logout and log back in now
 # don't forget to accept creating .zshrc with recommended settings before installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# TODO: extract this to separate unpack dotfiles script file
 # clone and unpack the configs
-git clone https://github.com/3rdp/dotfiles ~/dotfiles
+# git clone https://github.com/3rdp/dotfiles ~/dotfiles # wtf, you don't need this since you already cloned it, how would you run this script then
+echo "Renaming .git folder"
+mv .git ~git
 cd
-mv dotfiles/* dotfiles/.* .
+echo "Unpacking dotfiles"
+mv dotfiles/.* .
+
+# TODO: extract install ubuntu packages setup to a separate script file
 
 sudo tasksel install lamp-server
 

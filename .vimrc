@@ -1,3 +1,4 @@
+" FIXME: https://dougblack.io/words/a-good-vimrc.html
 execute pathogen#infect()
 
 " airline config
@@ -13,13 +14,36 @@ endif
 let g:airline_symbols.space = "\ua0"
 
 " ukrainian keymap
-set keymap=ukrainian-jcuken
-""set keymap=russian-jcukenwin
+"set keymap=ukrainian-jcuken
+"set keymap=russian-jcukenwin
 
 " color
 set bg=dark
 highlight lCursor guifg=NONE guibg=Cyan
+
+" The Big Epic Fight to Highlihgt diff with diff stat with colorscheme of tig
+" =====================
+"
+" thank you kind human, now I don't have to source the patched colorscheme
+" file https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
+function! MyHighlights() abort
+  " hi is short for highlight
+  hi diffAdded     guifg=Green ctermfg=2
+  hi diffRemoved   guifg=Red   ctermfg=1
+  hi diffFile      guifg=Brown ctermfg=130
+  hi diffNewFile   guifg=Brown ctermfg=130
+  hi default DiffStatAddHl     ctermfg=2
+  hi default DiffStatRemoveHl  ctermfg=1
+endfunction
+augroup MyColors
+  autocmd!
+  autocmd ColorScheme * call MyHighlights()
+augroup END
 colorscheme slate
+" diff syntax is extended in dotfiles/scripts/vim-diffstat.sh
+" TODO: also - can I have that F9 (debug that syntax name under the cursor) and \z (fold everything in between of search matches) in my vimrc
+" TODO: there was also a script to debug color codes in vim which prints out 255 colors into the buffer 
+
 let g:airline_theme='sol'
 set t_Co=256
 
@@ -133,3 +157,39 @@ map <Space> :noh<CR>:<backspace>
 " fix webpack watch bug (and after all it just makes more sense)
 set backupcopy=yes
 
+let g:slime_target = "tmux"
+
+set modeline
+
+nnoremap <leader>d :! git diff %
+nnoremap <leader>c :! git dca %
+" now I can \d to see unstaged changes and \c to see staged changes, all on
+" current buffer
+:command Eslint ! npx eslint %
+:command EslintFix ! npx eslint --fix %
+cnoreabbrev lint Eslint
+cnoreabbrev lintfix EslintFix
+" now I can :lint to see eslint output and :lintfix to auto lint, all on
+" current buffer
+
+"map ! to :!^M ? no, this is safer
+nmap ! :!
+" now I can see terminal output slightly faster and less error-prone than typing :!<Enter>
+
+"https://stackoverflow.com/a/2120168/4368216
+if !exists('g:lasttab')
+  let g:lasttab = 1
+endif
+nmap <Leader>l :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+" now I can \l to quickly switch to previous tab
+
+nmap <Leader>1 1gt
+nmap <Leader>2 2gt
+nmap <Leader>3 3gt
+nmap <Leader>4 4gt
+nmap <Leader>5 5gt
+nmap <Leader>6 6gt
+nmap <Leader>7 7gt
+nmap <Leader>8 8gt
+nmap <Leader>9 9gt
