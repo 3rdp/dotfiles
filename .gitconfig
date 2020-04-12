@@ -6,6 +6,7 @@
 	safecrlf = true
 	editor = vim
 	excludesfile = /home/sasha/.gitignore-global
+  fileMode = false
 [alias]
 	co = checkout
 	ci = commit

@@ -60,10 +60,6 @@ ZSH_THEME="amuse"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
-  npm,
-  nvm,
-  screen,
   web-search
 )
 
@@ -122,3 +118,15 @@ alias st='git st'
 
 # enable 256 colors (only for screen really)
 export TERM=xterm-256color
+
+# android sdk and java
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/usr/local/android-studio/jre
+
+# clojurescript (lumo)
+alias cljs=lumo
