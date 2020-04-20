@@ -30,7 +30,7 @@ bash scripts/vim-diffstat.sh
 
 # TODO: this is zsh setup, append to install cli utils or create a separate file
 echo About to change shell to zsh
-chsh -s $(which zsh)
+chsh -s $(which zsh) # can and will be done in oh-my-zsh script
 echo Logout and log back in now
 
 # don't forget to accept creating .zshrc with recommended settings before installing oh-my-zsh
