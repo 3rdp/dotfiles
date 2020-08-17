@@ -125,7 +125,7 @@ let g:vdebug_keymap = {
 \}
 
 " style cursorline highlighting
-hi CursorLine term=bold cterm=NONE guibg=Grey40 ctermbg=235
+hi CursorLine term=none cterm=none guibg=Grey40 ctermbg=235
 
 " save a file as sudo
 cmap w!! w !sudo tee > /dev/null %
