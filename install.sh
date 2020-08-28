@@ -3,7 +3,7 @@
 
 # install cli software
 sudo apt-get update
-sudo apt install -y vim-gtk3 screen tmux zsh curl
+sudo apt install -y vim-gtk3 screen tmux zsh curl ack-grep
 
 # nvm install
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -24,6 +24,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 echo About to unpack dotfiles
 zsh scripts/unpack-dotfiles.sh
+# TODO: xfce/middle-click-touchpad-gesture
+# it's probably this https://askubuntu.com/a/1186708
+# but this might also work, idk https://blog.ham1.co.uk/2019/02/02/middle-click-with-three-finger-tap-xfce-xps-13-ubuntu/
+# this change requires a logout to take action
+# TODO: xfce/terminal-color-theme
+# TODO: xfce/terminal-font
+# TODO: xfce/wm-font
 exit 1
 
 # TODO: extract installation of ubuntu packages setup to a separate script file
