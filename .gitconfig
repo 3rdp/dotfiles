@@ -1,23 +1,23 @@
 [user]
-	email = third.pancake16@gmail.com
-	name = 3rdp
+  email = third.pancake16@gmail.com
+  name = 3rdp
 [core]
-	autocrlf = false
-	safecrlf = true
-	editor = vim
-	excludesfile = /home/sasha/.gitignore-global
+  autocrlf = false
+  safecrlf = true
+  editor = vim
+  excludesfile = /home/sasha/.gitignore-global
   fileMode = false
 [alias]
-	co = checkout
-	ci = commit
-	st = status -sb
-	br = branch
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	type = cat-file -t
-	dump = cat-file -p
-	exec = "!exec "
-	lg = log --pretty=format:'%h was %an, %ar | %C(bold)%s' --graph
-	au = add -u
-	dca = diff --cached
-	cia = commit --amend
+  co = checkout
+  ci = commit
+  st = status -sb
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  exec = "!exec "
+  lg = log --pretty=format:'%h was %an, %ar | %C(bold)%s' --graph
+  au = add -u
+  dca = diff --cached
+  cia = commit --amend
   sl = ! git stash list | cut -d":" -f 1 -f 3 | less
