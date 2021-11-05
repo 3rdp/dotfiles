@@ -20,3 +20,4 @@
 	au = add -u
 	dca = diff --cached
 	cia = commit --amend
+  sl = ! git stash list | cut -d":" -f 1 -f 3 | less
